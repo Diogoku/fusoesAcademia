@@ -1,0 +1,401 @@
+:root {
+  --mainBackgroundColor: rgb(252, 35, 35);
+
+  --mainColorText: black;
+  --secundaryColorText: rgb(71, 71, 71);
+
+  --focusColor: rgb(253, 11, 11);
+
+  --borderColor: rgb(172, 170, 170);
+}
+
+/*
+font-family: 'Crimson Text', serif;
+*/
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+th {
+  color: var(--mainColorText);
+}
+
+p,
+li,
+span,
+label,
+input,
+textarea,
+td {
+  color: var(--secundaryColorText);
+}
+
+p,
+li,
+label,
+input,
+textarea,
+td {
+  font-size: 14px;
+}
+
+header {
+  padding: 0.5em 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.brand-fusoes {
+  color: rgb(252, 35, 35);
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-list {
+  padding: 0.5em 2em;
+  border-left: 2px solid var(--focusColor);
+}
+
+.navbar-list-item {
+  display: inline-block;
+  text-align: center;
+}
+
+.navbar-link {
+  position: relative;
+  width: 100%;
+  text-decoration: none;
+  color: var(--mainColorText);
+  text-transform: uppercase;
+  margin-right: 3em;
+  padding: 0.3em;
+  letter-spacing: 2px;
+}
+
+.navbar-link::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--focusColor);
+  left: 0;
+  transform: scale(0);
+  transition: all 0.5s;
+}
+
+.navbar-link::after {
+  bottom: 0;
+  transform-origin: right;
+}
+
+.navbar-link:hover::after {
+  transform: scaleX(1);
+}
+
+.section-1 {
+  height: 27em;
+  overflow: auto;
+  background-color: black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2em;
+  flex-wrap: wrap;
+  padding: 5em;
+  text-align: center;
+}
+
+#wadokai-simbolo {
+  width: 200px;
+  height: 200px;
+}
+
+#quem-somos {
+  color: white;
+}
+
+.section-2 {
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 3em;
+}
+
+.table-wrapper {
+  position: relative;
+  border-left: 2px solid black;
+  width: 70%;
+  transition: all 0.5s;
+  display: flex;
+  justify-content: center;
+}
+
+.table {
+  border-collapse: collapse;
+}
+
+.table-head-cell {
+  padding: 1em;
+}
+
+.table-body-cell {
+  padding: 1em;
+  text-align: center;
+}
+
+/* table responsive */
+@media screen and (max-width: 850px) {
+  .table-wrapper {
+    border: none;
+  }
+
+  .table thead {
+    display: none;
+  }
+
+  .table,
+  .table tbody,
+  .table tr,
+  .table-body-cell {
+    display: block;
+    width: 100%;
+  }
+
+  .table tr:last-child {
+    margin-top: 3em;
+  }
+
+  .table-body-cell {
+    text-align: right;
+    position: relative;
+  }
+
+  .table-body-cell::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+  }
+}
+
+.section-3 {
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 3em;
+  background-color: black;
+}
+
+.section-3 h3 {
+  color: white;
+}
+
+.prices-container {
+  display: flex;
+  gap: 3em;
+  padding: 2em;
+}
+
+.single-price-container {
+  text-align: center;
+  width: 180px;
+  border-bottom: 1px solid white;
+  transition: all 0.5s;
+  position: relative;
+  overflow: hidden;
+  -webkit-box-shadow: 0px 0px 1px 0px rgba(255, 255, 255, 1);
+  -moz-box-shadow: 0px 0px 1px 0px rgba(255, 255, 255, 1);
+  box-shadow: 0px 0px 1px 0px rgba(255, 255, 255, 1);
+}
+
+.single-price-container::before {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: var(--focusColor);
+  position: absolute;
+  left: 65px;
+  transform: rotate(40deg);
+  padding: 5px;
+}
+
+.single-price-container:hover {
+  border-bottom: 1px solid var(--focusColor);
+}
+
+.single-price-container-title {
+  color: white;
+}
+
+.price {
+  padding: 0.2em 0;
+  color: white;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.descricao-turma p {
+  color: white;
+}
+
+/* responsive prices */
+@media screen and (min-width: 640px) {
+  .prices-container {
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .prices-container {
+    flex-direction: column;
+  }
+
+  .single-price-container {
+    border: none;
+  }
+}
+
+.section-4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+  padding: 3em 0;
+}
+
+#contact-form {
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 2em;
+}
+
+.label {
+  display: block;
+  padding: 0.4em 0;
+}
+
+.input {
+  width: 100%;
+  padding: 0.4em 0;
+}
+
+textarea {
+  resize: none;
+}
+
+#enviarMensagem {
+  border: none;
+  padding: 0.6em 0;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  background-color: var(--focusColor);
+  color: white;
+}
+
+#enviarMensagem:hover {
+  cursor: pointer;
+}
+
+.section-5 {
+  padding: 1em;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 2em;
+  background-color: black;
+}
+
+/* responsive section-5 */
+@media screen and (max-width: 1000px) {
+  .section-5 {
+    flex-direction: column;
+  }
+}
+
+i {
+  color: white;
+  font-size: 20px;
+}
+
+.toggle-button {
+  position: absolute;
+  right: 1rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+}
+
+.bar {
+  width: 100%;
+  height: 3px;
+  background-color: black;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 1024px) {
+  header {
+    flex-direction: column;
+  }
+
+  .toggle-button {
+    display: flex;
+    margin-top: 22px;
+  }
+
+  .navbar {
+    flex-direction: column;
+  }
+
+  .navbar-list-wrapper {
+    display: none;
+  }
+
+  .navbar-list-wrapper.active {
+    display: flex;
+  }
+
+  .navbar-list {
+    border: none;
+  }
+
+  .navbar-list-item {
+    width: 100%;
+    padding: 1em 0;
+  }
+}
